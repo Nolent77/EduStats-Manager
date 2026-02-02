@@ -1,4 +1,5 @@
 # Pour executer cette tâche executer la ligne de commande suivante : py main.py
+from utilis import *
 
 def make_student_list_note():
     note_list = []
@@ -22,9 +23,8 @@ def make_student_list_note():
             while True :
                 try :
                     note_student = float(input("La note de l'élève " + str(i + 1) +  " est : "))
-                    if note_student > 0 :
+                    if note_student >= 0 :
                         note_list.append(note_student)
-                        print("j'ai ajouter la nb à la liste")
                         break
                     elif note_student == -1:
                         print("Processus stopper")
@@ -35,5 +35,11 @@ def make_student_list_note():
                     print("Taper uniquement un nombre")
     return note_list
 
-print(make_student_list_note())
+### Initialization ###
 
+result_list = make_student_list_note()
+
+### Call & Display ###
+
+print(result_list)
+print(calculate_mean(result_list))
